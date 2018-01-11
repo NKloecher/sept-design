@@ -1,0 +1,16 @@
+body {
+  margin-left: 10px;
+}
+
+.test {
+  margin-left: -10px;
+}
+
+#navText {
+  color: white;
+  stroke: black;
+}
+
+a {
+  color: #00B7FF;
+}

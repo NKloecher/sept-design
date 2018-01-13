@@ -1,17 +1,29 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark test">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <select class="btn btn-sm">
-                    <option value="1">1</option>
-                </select>
-            </li>
-            <li id="navText" class="ml-5">
-                Welcome to this in-progress webpage, everything you see is under construction
-            </li>
-        </ul>
-    </div>
-</nav>
+<!-- Header starts here -->
+<div id="header-area">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark test">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <select id="navbar-path-dropdown" class="btn btn-sm" title="wipDropDown">
+                        {{#each paths}}
+                        <option value="{{this.pathname}}">{{this.desc}}</option>
+                        {{/each}}
+                    </select>
+                </li>
+                <li id="navText" class="ml-5">
+                    Welcome to this in-progress webpage, everything you see is under construction
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<!-- Content starts here -->
+<div id="content-area" class="container">
 <h1>{{title}}</h1>
 <p>Welcome to {{title}}</p>
+    <p id="test"></p>
+</div>
+<!-- Footer starts here -->
+<div id="footer-area">
 
+</div>

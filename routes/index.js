@@ -3,6 +3,11 @@ var router = express.Router();
 
 const data = {
   title: 'Express',
+  paths: [
+    {pathname: "/", desc: "index"},
+    {pathname: "/users", desc: "user page"},
+    {pathname: "/thailand", desc: "thailand"}
+  ],
   index:{}
 };
 

@@ -4,10 +4,11 @@
         <title>{{title}}</title>
         <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
         <link rel='stylesheet' href='/stylesheets/style.css' />
-        <script src="/jquery-3.1.0.min.js"></script>
+        <script src="/jquery-3.2.1.js"></script>
         <script src="/javascripts/bootstrap.bundle.js"></script>
         {{#if index}}<script async src="/javascripts/index.js"></script>{{/if}}
         {{#if login}}<script async src="/javascripts/login.js"></script> {{/if}}
+        {{#if user}}<script async src="/javascripts/user.js"></script> {{/if}}
   </head>
   <body>
     {{{body}}}

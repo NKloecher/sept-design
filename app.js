@@ -12,6 +12,7 @@ module.exports.createApp = function createApp({
   const index = require('./routes/index');
   const users = require('./routes/users');
   const login = require('./routes/login');
+  const thailand = require('./routes/thailand');
 
   const app = express();
 
@@ -27,32 +28,22 @@ module.exports.createApp = function createApp({
   app.use(cookieParser());
   app.use(express.static(path.join(__dirname, 'public')));
 
-  const data = {
-
-  };
-
   /**
    * TODO Find out a proper way to send data to all underlying applications,
    * while not relying on the setup from octo-spoon.
-   * Might have to reverse the createApp() method - will consider
+   * Might have to reverse the createApp() method - will consider.
+   * middleware probably use way too much power, since every request would do a db search.
    */
   app.use(async (req,res,next) =>{
-    let users = await User.find({});
-    console.log(users);
-    data.users = users;
-    next()
+    req.users = User
+    next() //This works, not sure about cost
   });
 
   app.use('/', index);
   app.use('/users', users);
   app.use('/login', login);
+  app.use('/thailand', thailand);
 
-
-  // async function test() {
-  //   let user = await User.find({});
-  // console.log(user)
-  // }
-  // test();
 
 // catch 404 and forward to error handler
   app.use(function (req, res, next) {

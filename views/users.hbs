@@ -1,6 +1,6 @@
 USER TEMPLATE
 <ul>
     {{#each users}}
-        <li>{{this.name}}</li>
+        <li><a href="/users/{{this.id}}">{{this.name}}</a></li>
     {{/each}}
 </ul>

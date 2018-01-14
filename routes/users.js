@@ -26,11 +26,30 @@ router.get('/:id', async (req,res) =>{
     console.log(user);
     const data = {
       user,
-    }
+    };
     res.render('user', data)
   }catch(err){
     res.render('error')
   }
+});
+
+
+router.post('/user', async (req,res) => {
+  //create a user and save to db
+  try {
+    await req.users.createUser(req.body);
+    res.end("User created");
+  }catch (err){
+    res.status(500).end("Error creating user");
+  }
+});
+
+router.put('/:user', (req,res)=>{
+  //update a specific user
+});
+
+router.delete('/:user', (req,res) => {
+  //delete a single user
 });
 
 module.exports = router;

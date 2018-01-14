@@ -1,0 +1,28 @@
+APPLICATION IDEAS:
+
+Pictures from thailand in pleasing manner
+Wishes in a single page app (maybe /wishes)
+Move wishes from index to wishes
+
+Could use a template from the web....... meh
+
+Be clear on Schema & Connection handling
+-> Is sending it with middleware the correct solution?
+-> Only the model is sent, individual routes handle their own queries. Might be okay.
+-> Stick with this model for now.
+
+Implement login.
+->Rename user as (people)?
+->Have User refer to actual users able to login
+-> technically don't even need to current user schema, but eh, it's okay.
+
+The library idea ain't half bad.
+->
+
+Revisit the navbar -> remove current dropdown in favor of better overview (blocks?)
+
+
+OTHER:
+
+Utilize Pluralsight material while able to.
+Decent videos

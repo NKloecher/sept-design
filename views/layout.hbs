@@ -8,9 +8,27 @@
         <script src="/javascripts/bootstrap.bundle.js"></script>
         {{#if index}}<script async src="/javascripts/index.js"></script>{{/if}}
         {{#if login}}<script async src="/javascripts/login.js"></script> {{/if}}
-        {{#if user}}<script async src="/javascripts/user.js"></script> {{/if}}
+        {{#if people}}<script async src="/javascripts/people.js"></script> {{/if}}
   </head>
   <body>
+  <!-- Header starts here -->
+  <div id="header-area">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark test">
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                  <li class="nav-item">
+                      <select id="navbar-path-dropdown" class="btn btn-sm" title="wipDropDown">
+                          <option>Wait for it</option>
+                      </select>
+                  </li>
+                  <li id="navText" class="ml-5">
+                      Welcome to this in-progress webpage, everything you see is under construction.
+                      Current idea -> wish implementation, single page.
+                  </li>
+              </ul>
+          </div>
+      </nav>
+  </div>
     {{{body}}}
   </body>
 </html>

@@ -6,12 +6,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
 module.exports.createApp = function createApp({
-    User,
+    Person,
     Wish
 }) {
 
   const index = require('./routes/index');
-  const users = require('./routes/users');
+  const people = require('./routes/people');
   const login = require('./routes/login');
   const thailand = require('./routes/thailand');
 
@@ -36,13 +36,13 @@ module.exports.createApp = function createApp({
    * middleware probably use way too much power, since every request would do a db search.
    */
   app.use(async (req,res,next) =>{
-    req.users = User;
+    req.people = Person;
     req.wishes = Wish;
     next() //This works, not sure about cost
   });
 
   app.use('/', index);
-  app.use('/users', users);
+  app.use('/people', people);
   app.use('/login', login);
   app.use('/thailand', thailand);
 

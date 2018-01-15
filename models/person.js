@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
 
-const User = new Schema({
+const Person = new Schema({
   name: {
     type: String,
     required: true,
@@ -18,15 +18,15 @@ const User = new Schema({
   }
 });
 
-User.plugin(uniqueValidator);
+Person.plugin(uniqueValidator);
 
-User.statics.createUser = function createUser(userData) {
+Person.statics.createPerson = function createPerson(userData) {
   if(userData) {
-     const user = new this(userData);
-     return user.save();
+     const person = new this(userData);
+     return person.save();
   } else {
-    return Promise.reject(new Error("Error creating wish"))
+    return Promise.reject(new Error("Error creating person"))
 }
 };
 
-module.exports.User = User;
+module.exports.Person = Person;

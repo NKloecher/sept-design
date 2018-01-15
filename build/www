@@ -17,14 +17,14 @@ Mongoose connection
  */
 
 const {createApp} = require('../app');
-const {User} = require('../models/user');
+const {Person} = require('../models/person');
 const {Wish} = require('../models/wish');
 
 mongoose.Promise = global.Promise;
 const connection = mongoose.createConnection("mongodb://localhost:27017/sept-design");
 
 const app = createApp({
-  User: connection.model("User", User),
+  Person: connection.model("Person", Person),
   Wish: connection.model("Wish", Wish)
 });
 

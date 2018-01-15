@@ -5,10 +5,10 @@ const router = express.Router();
 router.get('/', async function(req, res, next) {
 
   try {
-   const users = await req.users.find({});
-   console.log("user: " + users);
+   const people = await req.people.find({});
+   console.log("people: " + people);
    const data = {
-     users
+     people
    };
   res.render('users', data)
   }
@@ -22,7 +22,7 @@ router.get('/', async function(req, res, next) {
 router.get('/:id', async (req,res) =>{
   try {
     let userId = req.params.id;
-    let user = await req.users.findOne({_id: userId});
+    let user = await req.people.findOne({_id: userId});
     console.log(user);
     const data = {
       user,
@@ -37,7 +37,7 @@ router.get('/:id', async (req,res) =>{
 router.post('/user', async (req,res) => {
   //create a user and save to db
   try {
-    await req.users.createUser(req.body);
+    await req.people.createPerson(req.body);
     res.end("User created");
   }catch (err){
     res.status(500).end("Error creating user");

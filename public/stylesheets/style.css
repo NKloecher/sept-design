@@ -1,16 +1,13 @@
-body {
-  margin-left: 10px;
-}
-
-.test {
-  margin-left: -10px;
+#footer-area {
+  background: lightgrey;
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 500px 0 500px lightgrey;
 }
 
 #navText {
   color: white;
   stroke: black;
-}
-
-a {
-  color: #00B7FF;
 }

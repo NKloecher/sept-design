@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+<!--suppress HtmlUnknownTarget -->
 <html>
   <head>
         <title>{{title}}</title>
-        <link rel="stylesheet" href="/stylesheets/bootstrap.css" />
+        <link rel="stylesheet" href="/stylesheets/bootstrap.css"/>
         <link rel='stylesheet' href='/stylesheets/style.css' />
         <script src="/jquery-3.2.1.js"></script>
         <script src="/javascripts/bootstrap.bundle.js"></script>
@@ -18,17 +19,33 @@
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item">
                       <select id="navbar-path-dropdown" class="btn btn-sm" title="wipDropDown">
-                          <option>Wait for it</option>
+                          <option>WIPs</option>
+                          <option>Footer</option>
+                          <option>Wishes</option>
+                          <option>Thailand</option>
                       </select>
                   </li>
                   <li id="navText" class="ml-5">
                       Welcome to this in-progress webpage, everything you see is under construction.
-                      Current idea -> wish implementation, single page.
                   </li>
               </ul>
           </div>
       </nav>
   </div>
+  <!-- Content/Body starts here -->
     {{{body}}}
+  <!-- Footer starts here -->
+  <div id="footer-area">
+        <div class="container-fluid mt-1">
+            <div id="About-me" class="col-xl-4">
+                <p><b>About Me</b></p>
+                <ul>
+                    <li>Nicolai Kløcher</li>
+                    <li>Student in Computer Science</li>
+                    <li><a href="https://github.com/NKloecher">Github</a></li>
+                </ul>
+            </div>
+        </div>
+  </div>
   </body>
 </html>

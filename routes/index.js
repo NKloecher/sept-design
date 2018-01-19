@@ -2,18 +2,19 @@ let express = require('express');
 let router = express.Router();
 
 let data = {
-  title: 'Wishes with Express',
+  title: "Kloecher's Express",
+  desc: 'Express testing, wishes and more!',
   paths: [
     {pathname: "/", desc: "index"},
-    {pathname: "/users", desc: "users"},
+    {pathname: "/people", desc: "people"},
     {pathname: "/thailand", desc: "thailand"}
   ],
+  // lorem: require("fs").readFileSync("./lorem.html"), //alt way, but no html formatting :(
   index:{}
 };
 
 /* GET home page. */
 router.get('/',async function(req, res) {
-  data.wishes = await req.wishes.find({});
   res.render('index', data);
 });
 

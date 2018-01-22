@@ -33,6 +33,7 @@ router.get('/:id', async (req,res) =>{
   }
 });
 
+//TODO the fuck is this shit? clean up -- maybe refactor to person
 
 router.post('/user', async (req,res) => {
   //create a user and save to db

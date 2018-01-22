@@ -1,19 +1,26 @@
 const express = require('express');
+const session = require('express-session');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const passport = require('passport');
+
 
 module.exports.createApp = function createApp({
     Person,
-    Wish
+    Wish,
+    User
 }) {
+
+  require('./config/passport')(passport, User);
 
   const index = require('./routes/index');
   const people = require('./routes/people');
   const login = require('./routes/login');
   const thailand = require('./routes/thailand');
+  const user = require('./routes/user');
 
   const app = express();
 
@@ -30,7 +37,21 @@ module.exports.createApp = function createApp({
   app.use(express.static(path.join(__dirname, 'public')));
 
   /**
-   * TODO Find out a proper way to send data to all underlying applications,
+   * Passport stuff -> maybe another folder
+   */
+  app.use(session({
+    secret: "Shh don't tell anyone",
+    resave: false,
+    saveUninitialized: false
+  }));
+
+  app.use(passport.initialize());
+  app.use(passport.session());
+
+
+
+  /**
+   * Find out a proper way to send data to all underlying applications,
    * while not relying on the setup from octo-spoon.
    * Might have to reverse the createApp() method - will consider.
    * middleware probably use way too much power, since every request would do a db search.
@@ -38,6 +59,7 @@ module.exports.createApp = function createApp({
   app.use(async (req,res,next) =>{
     req.people = Person;
     req.wishes = Wish;
+    req.users = User;
     next() //This works, not sure about cost
   });
 
@@ -45,6 +67,7 @@ module.exports.createApp = function createApp({
   app.use('/people', people);
   app.use('/login', login);
   app.use('/thailand', thailand);
+  app.use('/user', user);
 
 
 // catch 404 and forward to error handler

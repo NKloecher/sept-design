@@ -1,1 +1,35 @@
-Soon to be {{title}}
+<!--suppress HtmlUnknownTarget -->
+<body class="bg-light">
+<div class="mx-auto" style="width: 40rem;">
+    <div class="my-5 pb-3" style="width: 100%; text-align: center;">
+        <img id="logo-hawk" src="/images/Athletic-Hawk-OUTLINE-BLUE.png">
+    </div>
+
+    <div class="card mx-auto">
+        <div class="card-header">
+            <h5 style="margin-bottom: 0;">Log In</h5>
+        </div>
+
+        <div class="card-body">
+
+            {{#if message}}
+                <div class="alert alert-danger">{{message}}</div>
+            {{/if}}
+
+            <form id="login-form" action="/login" method="post">
+                <div class="form-group">
+                    <label for="inputUsername">Username</label>
+                    <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Username">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputPassword">Password</label>
+                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password">
+                </div>
+
+                <button id="login-button" type="submit" class="btn btn-primary btn-lg btn-block">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>
+</body>

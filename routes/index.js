@@ -15,13 +15,12 @@ let data = {
 
 /* GET home page. */
 router.get('/',async function(req, res) {
+  //TODO redirect to /login if not logged in
   res.render('index', data);
 });
 
 /**
- * Insert wish related paths here.
- * get All wishes in root
- * (get/?!)put/post ('/:wish') for single wish
+ * Refactor these to a wish route
  */
 
 //todo lemon trees, rational oven, 5br house, me

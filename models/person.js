@@ -8,7 +8,7 @@ const Person = new Schema({
   name: {
     type: String,
     required: true,
-    unique: true
+    unique: true //actually wrong, but needs other implementation
   },
   email: String,
   address: {
